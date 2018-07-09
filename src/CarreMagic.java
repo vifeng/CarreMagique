@@ -1,20 +1,24 @@
-//prog qui vŽrifie un carrŽ magique
+package src;
+
+import src.Terminal;
+
+//prog qui vï¿½rifie un carrï¿½ magique
 /* 
- * Le carrŽ commence ˆ la ligne et colonne 0
+ * Le carrï¿½ commence ï¿½ la ligne et colonne 0
 */
 public class CarreMagic{
   public static void main(String[] args){
     boolean check=true;
 
- //tableau - ˆ composer par l'utilisateur 
+ //tableau - ï¿½ composer par l'utilisateur 
 
     int cases, nbmax;
-    Terminal.ecrireString("Choisissez la grandeur de votre carrŽ. exemple : 3 pour un carrŽ de 3 x 3");
+    Terminal.ecrireString("Choisissez la grandeur de votre carrï¿½. exemple : 3 pour un carrï¿½ de 3 x 3");
     Terminal.sautDeLigne();
     cases = Terminal.lireInt();
     nbmax = cases * cases;
     Terminal.sautDeLigne();
-    Terminal.ecrireString("Remplissez le tableau et vŽrifier si votre carrŽ est magique. La premire colonne et premire ligne commence ˆ 0. Vous ne pouvez pas utiliser un nombre qui a dŽjˆ ŽtŽ entrŽ");
+    Terminal.ecrireString("Remplissez le tableau et vï¿½rifier si votre carrï¿½ est magique. La premiï¿½re colonne et premiï¿½re ligne commence ï¿½ 0. Vous ne pouvez pas utiliser un nombre qui a dï¿½jï¿½ ï¿½tï¿½ entrï¿½");
     Terminal.sautDeLigne();
 
     int[][] carre = new int[cases][cases];
@@ -74,8 +78,8 @@ public class CarreMagic{
         som3=som3+carre[i][j];//addition pour le total par ligne
         som4=som4+carre[j][i];//addition pour le total par colonne
       }
-      //Terminal.ecrireStringln("le total par ligne : "+som3);
-      //Terminal.ecrireStringln("le total par colonne : "+som4);
+      //src.Terminal.ecrireStringln("le total par ligne : "+som3);
+      //src.Terminal.ecrireStringln("le total par colonne : "+som4);
       
       if (som3!=som1 || som4!=som1 ){
         nb++;
@@ -89,22 +93,22 @@ public class CarreMagic{
       check=false;
     }
     
-//affichage du check : si c'est un carrŽ magique ou pas
+//affichage du check : si c'est un carrï¿½ magique ou pas
     if (check){
-      Terminal.ecrireString("Bravo ! C'est un carrŽ magique.");
+      Terminal.ecrireString("Bravo ! C'est un carrï¿½ magique.");
     }else{
-      Terminal.ecrireString("Ce n'est pas un carrŽ magique. Essai encore une fois!");  
+      Terminal.ecrireString("Ce n'est pas un carrï¿½ magique. Essai encore une fois!");  
     }
   }
 }
 
 
 /*Jeu de test
- valeur ˆ entrer champs par champs dans le prog : 
- 0,0,2,1,0,7,2,0,6,0,1,5,1,1,9,2,1,1,0,2,4,1,2,3,2,2,8 => FAUX ce n'est pas un carrŽ magique
- 0,0,2,1,0,7,2,0,6,0,1,9,1,1,5,2,1,1,0,2,4,1,2,3,2,2,8 => vrai c'est un carrŽ magique
+ valeur ï¿½ entrer champs par champs dans le prog : 
+ 0,0,2,1,0,7,2,0,6,0,1,5,1,1,9,2,1,1,0,2,4,1,2,3,2,2,8 => FAUX ce n'est pas un carrï¿½ magique
+ 0,0,2,1,0,7,2,0,6,0,1,9,1,1,5,2,1,1,0,2,4,1,2,3,2,2,8 => vrai c'est un carrï¿½ magique
  
- ou valeur ˆ entrer dans votre code
- {2,7,6}, {5,9,1}, {4,3,8} => FAUX ce n'est pas un carrŽ magique
- {2,7,6}, {9,5,1}, {4,3,8} => vrai c'est un carrŽ magique
+ ou valeur ï¿½ entrer dans votre code
+ {2,7,6}, {5,9,1}, {4,3,8} => FAUX ce n'est pas un carrï¿½ magique
+ {2,7,6}, {9,5,1}, {4,3,8} => vrai c'est un carrï¿½ magique
  */
